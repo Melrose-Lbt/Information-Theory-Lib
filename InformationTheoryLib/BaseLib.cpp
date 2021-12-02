@@ -162,3 +162,35 @@ float Dis_MemlessSrc::get_SrcEntropy(){
 float Dis_MemlessSrc::get_SrcSelfInfo(int loc){
     return Cal_SelfInfo(m_prob[loc - 1],m);
 }
+
+
+/* Heap Sort function */
+void swaps(int arr[], int i, int j){
+    int temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+}
+
+void HeapInsert(int arr[], int index){
+    while(arr[index] > arr[(index-1)/2]){
+        swaps(arr, index, (index-1)/2);
+        index = (index-1)/2;
+    }
+}
+
+void Heapify(int arr[], int index, int heapsize){
+
+    while(2*index+1 < heapsize){
+        int bigger = arr[2*index+1] > arr[2*index+2]? 2*index+1 : 2*index+2;
+        int max = arr[bigger]>arr[index]? bigger : index;
+        if(max == index){
+            cout<<"yes"<<endl;
+            break;
+        }
+        if(max == bigger){
+            cout<<"continue"<<endl;
+            swaps(arr, index, bigger);
+        }
+        index = max;
+    }
+}
