@@ -30,6 +30,9 @@ using namespace std;
     Continuous memory source: Con_MemSrc
 */
 
+void Heapify(int arr[], int index, int heapsize);
+void HeapInsert(int arr[], int index);
+
 
 class Dis_MemlessSrc{
     public:
