@@ -32,6 +32,7 @@ using namespace std;
 
 void Heapify(int arr[], int index, int heapsize);
 void HeapInsert(int arr[], int index);
+void HeapSort(int arr[], int index, int heapsize);
 
 
 class Dis_MemlessSrc{
