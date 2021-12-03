@@ -194,3 +194,22 @@ void Heapify(int arr[], int index, int heapsize){
         index = max;
     }
 }
+
+/*  Using heapinsert and Heapify fuction to sort an array
+    para:int array, index(basically is zero), heapsize is size of the array
+*/
+void HeapSort(int arr[], int index, int heapsize){
+
+    for(int i=0;i<heapsize;i++){
+        HeapInsert(arr,i);
+    }
+    cout<<endl;
+
+    while (heapsize>0 && arr[0]>arr[heapsize-1])
+    {
+        swaps(arr, 0, heapsize-1);
+        heapsize--;
+        Heapify(arr, 0, heapsize);
+    }
+    
+}
